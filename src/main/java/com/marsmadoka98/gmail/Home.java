@@ -81,6 +81,11 @@ public class Home extends javax.swing.JFrame {
         });
 
         jButton2statstics.setText("jButton2");
+        jButton2statstics.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2statsticsActionPerformed(evt);
+            }
+        });
 
         jButton3newstudent.setText("jButton3");
         jButton3newstudent.addActionListener(new java.awt.event.ActionListener() {
@@ -147,8 +152,18 @@ public class Home extends javax.swing.JFrame {
         });
 
         jButtonreturnBook.setText("jButton2");
+        jButtonreturnBook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonreturnBookActionPerformed(evt);
+            }
+        });
 
         jButtonAbout.setText("jButton3");
+        jButtonAbout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAboutActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Ubuntu", 3, 15)); // NOI18N
         jLabel2.setText("issue Book");
@@ -343,6 +358,33 @@ public class Home extends javax.swing.JFrame {
          reg.setLocationRelativeTo(null);
          this.dispose();
     }//GEN-LAST:event_jButtonissuebookActionPerformed
+
+    private void jButtonreturnBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonreturnBookActionPerformed
+        
+        
+         ReturnBook reg=new ReturnBook();
+         reg.setVisible(true);
+         reg.pack();
+         reg.setLocationRelativeTo(null);
+         this.dispose();
+    }//GEN-LAST:event_jButtonreturnBookActionPerformed
+
+    private void jButton2statsticsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2statsticsActionPerformed
+        // TODO add your handling code here:
+        Statistics reg=new Statistics();
+         reg.setVisible(true);
+         reg.pack();
+         reg.setLocationRelativeTo(null);
+         this.dispose();
+    }//GEN-LAST:event_jButton2statsticsActionPerformed
+
+    private void jButtonAboutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAboutActionPerformed
+     About reg=new About();
+         reg.setVisible(true);
+         reg.pack();
+         reg.setLocationRelativeTo(null);
+         this.dispose();
+    }//GEN-LAST:event_jButtonAboutActionPerformed
 
     /**
      * @param args the command line arguments

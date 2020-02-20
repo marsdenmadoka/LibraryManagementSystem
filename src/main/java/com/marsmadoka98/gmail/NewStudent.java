@@ -24,6 +24,7 @@ public class NewStudent extends javax.swing.JFrame {
     PreparedStatement pst;
     public NewStudent() {
         initComponents();
+        conn=javaconnect.ConnectDb();
     }
 
     /**
@@ -83,6 +84,11 @@ public class NewStudent extends javax.swing.JFrame {
         });
 
         jButton2.setText("Back");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -194,6 +200,14 @@ public class NewStudent extends javax.swing.JFrame {
     
     }
     }//GEN-LAST:event_jButton1registerActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+ Home reg=new Home();
+         reg.setVisible(true);
+         reg.pack();
+         reg.setLocationRelativeTo(null);
+         this.dispose();        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

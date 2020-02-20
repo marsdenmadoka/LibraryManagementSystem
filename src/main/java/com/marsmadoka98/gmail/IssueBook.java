@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -66,10 +67,11 @@ public class IssueBook extends javax.swing.JFrame {
         jTextField12 = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jTextField13 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        jButton2searchstudent = new javax.swing.JButton();
         jLabel14 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        jButton3issuebook = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jTextField14 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -193,7 +195,12 @@ public class IssueBook extends javax.swing.JFrame {
         jLabel13.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
         jLabel13.setText("Semester");
 
-        jButton2.setText("search");
+        jButton2searchstudent.setText("search");
+        jButton2searchstudent.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2searchstudentActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -220,8 +227,8 @@ public class IssueBook extends javax.swing.JFrame {
                     .addComponent(jTextField9)
                     .addComponent(jTextField13, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
                 .addGap(33, 33, 33)
-                .addComponent(jButton2)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .addComponent(jButton2searchstudent, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(32, 32, 32))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,7 +239,7 @@ public class IssueBook extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel7)
                             .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton2))
+                            .addComponent(jButton2searchstudent))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
@@ -261,7 +268,12 @@ public class IssueBook extends javax.swing.JFrame {
 
         jLabel14.setText("Date Of issue");
 
-        jButton3.setText("issue");
+        jButton3issuebook.setText("issueBook");
+        jButton3issuebook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3issuebookActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Back");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
@@ -283,14 +295,15 @@ public class IssueBook extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton3issuebook, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(98, 98, 98)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel14)
-                        .addGap(355, 355, 355))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jButton3)
-                        .addGap(131, 131, 131)
-                        .addComponent(jButton4)
-                        .addGap(117, 117, 117))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(64, 64, 64))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -300,12 +313,14 @@ public class IssueBook extends javax.swing.JFrame {
                     .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(jLabel14)
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
+                    .addComponent(jLabel14)
+                    .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3issuebook)
                     .addComponent(jButton4))
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         pack();
@@ -322,11 +337,9 @@ public class IssueBook extends javax.swing.JFrame {
 
     private void jButton1searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1searchActionPerformed
 
- /*when one enters the bookid and clicks search if the user id exists
+ /*when user enters the bookid and clicks search if the user id exists
         then it will retrive all the information of the book and automatically write it to the jTextfields
-         */
-        
-        
+         */       
    String sql="select * from Book where Book_ID=?"; //select the book_id entered by the user
 try{
 pst=conn.prepareStatement(sql);
@@ -357,10 +370,101 @@ JOptionPane.showMessageDialog(null,"BooK ID does not exsist");
 }
 
 }catch(Exception e){
+JOptionPane.showMessageDialog(null,e);
+}finally{
+
+try{
+rs.close();
+pst.close();
+}catch(Exception e){
+    
+}
+}
+         
+    }//GEN-LAST:event_jButton1searchActionPerformed
+
+    private void jButton2searchstudentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2searchstudentActionPerformed
+        
+      String sql="select * from Student where Student_ID=?"; //get student_id entered by the user and dispaly the whole details
+try{
+pst=conn.prepareStatement(sql);
+pst.setString(1,jTextField7.getText());
+rs=pst.executeQuery();
+
+if(rs.next()){ //if the book id exsists
+String add1=rs.getString("Name"); //get the Book name from db String add1=rs.getString("Name"); and add it to the jtextfield
+jTextField8.setText(add1);
+
+String add2=rs.getString("ID_Number");
+jTextField9.setText(add2);
+
+String add3=rs.getString("course"); //means take the name of the course from the database and display it in the jText field10
+jTextField10.setText(add2);
+
+String add4=rs.getString("branch");//take the name/value of ranch in the database and display it in the jTextfield11
+jTextField11.setText(add4);
+
+String add5=rs.getString("year");
+jTextField12.setText(add5);
+
+String add6=rs.getString("semester");
+jTextField13.setText(add6);
+
+rs.close();
+pst.close();
+}else{
+JOptionPane.showMessageDialog(null,"Student_ID does not exsist");
 
 }
+
+}catch(Exception e){
+JOptionPane.showMessageDialog(null,e);
+}finally{
+
+try{
+rs.close();
+pst.close();
+}catch(Exception e){
+    
+}
+}   
         
-    }//GEN-LAST:event_jButton1searchActionPerformed
+        
+        
+    }//GEN-LAST:event_jButton2searchstudentActionPerformed
+
+    private void jButton3issuebookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3issuebookActionPerformed
+          
+        
+        String sql="insert into Issue(Book_ID,Name,Edition,Publisher,Price,Pages,Student_id,Student_name,ID_NO,Course,Branch,Year,Semester,DateOfIssue) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+        try{
+         pst=conn.prepareStatement(sql);
+         pst.setString(1,jTextField1.getText());
+         pst.setString(2,jTextField2.getText());
+         pst.setString(3,jTextField3.getText());
+         pst.setString(4,jTextField4.getText());
+         pst.setString(5,jTextField5.getText());
+         pst.setString(6,jTextField6.getText());
+         pst.setString(7,jTextField7.getText());
+         pst.setString(8,jTextField8.getText());
+         pst.setString(9,jTextField9.getText());
+         pst.setString(10,jTextField10.getText());
+         pst.setString(11,jTextField11.getText());
+         pst.setString(12,jTextField12.getText());
+         pst.setString(13,jTextField13.getText());
+         pst.setString(14,jTextField14.getText());
+        // pst.setString(14, ((JTextField)jDateChooser1.getDateEditor().getUiComponent()).getText());
+          pst.execute();      
+            
+            JOptionPane.showMessageDialog(null,"Book issued");
+        
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        
+       
+        }
+        
+    }//GEN-LAST:event_jButton3issuebookActionPerformed
 
     /**
      * @param args the command line arguments
@@ -399,8 +503,8 @@ JOptionPane.showMessageDialog(null,"BooK ID does not exsist");
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1search;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton2searchstudent;
+    private javax.swing.JButton jButton3issuebook;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
@@ -423,6 +527,7 @@ JOptionPane.showMessageDialog(null,"BooK ID does not exsist");
     private javax.swing.JTextField jTextField11;
     private javax.swing.JTextField jTextField12;
     private javax.swing.JTextField jTextField13;
+    private javax.swing.JTextField jTextField14;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
