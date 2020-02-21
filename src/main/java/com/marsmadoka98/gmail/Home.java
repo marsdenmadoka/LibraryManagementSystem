@@ -73,21 +73,21 @@ public class Home extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(231, 12, 12)), "operations", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 3, 24), new java.awt.Color(222, 12, 12)), "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 0, 24))); // NOI18N
 
-        jButton1newBook.setText("jButton1");
+        jButton1newBook.setText("click to add new book");
         jButton1newBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1newBookActionPerformed(evt);
             }
         });
 
-        jButton2statstics.setText("jButton2");
+        jButton2statstics.setText("view statistics");
         jButton2statstics.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2statsticsActionPerformed(evt);
             }
         });
 
-        jButton3newstudent.setText("jButton3");
+        jButton3newstudent.setText("add new stude");
         jButton3newstudent.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3newstudentActionPerformed(evt);
@@ -112,14 +112,17 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton1newBook)
                     .addComponent(jLabel5))
-                .addGap(207, 207, 207)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton2statstics)
-                    .addComponent(jLabel6))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3newstudent)
-                    .addComponent(jLabel7))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addGap(127, 127, 127))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton2statstics)
+                        .addGap(118, 118, 118)))
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton3newstudent, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(30, 30, 30))
         );
         jPanel2Layout.setVerticalGroup(
@@ -127,16 +130,16 @@ public class Home extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(48, 48, 48)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton3newstudent)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1newBook)
-                        .addComponent(jButton2statstics)))
+                        .addComponent(jButton3newstudent)
+                        .addComponent(jButton2statstics))
+                    .addComponent(jButton1newBook))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7)
                     .addComponent(jLabel6)
                     .addComponent(jLabel5))
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jLabel8.setIcon(new javax.swing.ImageIcon("/home/rootkali/NetBeansProjects/LibraryMangementSystem/images/namecard.png")); // NOI18N
@@ -144,21 +147,21 @@ public class Home extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(10, 243, 74), 2, true), "Action", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Dialog", 3, 18), new java.awt.Color(30, 236, 16))); // NOI18N
 
-        jButtonissuebook.setText("jButton1");
+        jButtonissuebook.setText("issuebook");
         jButtonissuebook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonissuebookActionPerformed(evt);
             }
         });
 
-        jButtonreturnBook.setText("jButton2");
+        jButtonreturnBook.setText("return book");
         jButtonreturnBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonreturnBookActionPerformed(evt);
             }
         });
 
-        jButtonAbout.setText("jButton3");
+        jButtonAbout.setText("About");
         jButtonAbout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonAboutActionPerformed(evt);
@@ -237,7 +240,7 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 18, Short.MAX_VALUE)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
